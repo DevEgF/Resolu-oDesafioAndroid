@@ -16,7 +16,7 @@ class PicPayRepositoryImpl @Inject constructor(
 
     private var latestUsers: List<User> = emptyList()
 
-    suspend fun getLatestNews(refresh: Boolean = false): List<User> {
+    suspend fun getLatestUsers(refresh: Boolean = false): List<User> {
         if (refresh || latestUsers.isEmpty()) {
             val networkResult = dataSource.getUsers().map { userResponse -> userResponse.toUser()}
             latestUsersMutex.withLock {
