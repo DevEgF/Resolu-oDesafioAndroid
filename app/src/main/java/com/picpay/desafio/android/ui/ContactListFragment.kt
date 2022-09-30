@@ -52,7 +52,3 @@ class ContactListFragment : Fragment() {
         _binding = null
     }
 }
-
-/*
-TODO falta implementar o loading e o cache e testes
- */
