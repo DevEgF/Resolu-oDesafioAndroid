@@ -1,31 +1,14 @@
 package com.picpay.desafio.android
 
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
-import junit.framework.Assert.assertEquals
-import org.junit.Test
-import retrofit2.Call
-import retrofit2.Response
+import com.picpay.desafio.android.extension.InstantTaskExecutorExtension
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.Mockito
 
-//class ExampleServiceTest {
+@ExtendWith(InstantTaskExecutorExtension::class)
+class ExampleServiceTest {
 //
-//    private val api = mock<PicPayService>()
+//    private val problemsApi = Mockito.mock(PicPayService::class.java, Mockito.RETURNS_DEEP_STUBS)
+//    private val viewModel =
 //
-//    private val service = ExampleService(api)
-//
-//    @Test
-//    fun exampleTest() {
-//        // given
-//        val call = mock<Call<List<User>>>()
-//        val expectedUsers = emptyList<User>()
-//
-//        whenever(call.execute()).thenReturn(Response.success(expectedUsers))
-//        whenever(api.getUsers()).thenReturn(call)
-//
-//        // when
-//        val users = service.example()
-//
-//        // then
-//        assertEquals(users, expectedUsers)
-//    }
-//}
+
+}
