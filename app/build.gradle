@@ -8,6 +8,7 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlinx-serialization'
 
+
 android {
     compileSdkVersion 33
     defaultConfig {
@@ -21,6 +22,7 @@ android {
         buildConfigField "String", "BASE_URL", '"https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/"'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         debug {}
 
@@ -40,6 +42,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
         freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
@@ -47,10 +50,12 @@ android {
 
     kapt {
         correctErrorTypes = true
+
     }
     viewBinding {
         enabled = true
     }
+
     testOptions {
         unitTests.all {
             useJUnitPlatform()
