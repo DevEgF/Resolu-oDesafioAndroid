@@ -12,21 +12,6 @@ class PicPayRepositoryImpl @Inject constructor(
     private val dataSource: PicPayDataSource
 ) : PicPayRepository {
 
-    private val latestUsersMutex = Mutex()
-
-    private var latestUsers: List<User> = emptyList()
-
-    suspend fun getLatestUsers(refresh: Boolean = false): List<User> {
-        if (refresh || latestUsers.isEmpty()) {
-            val networkResult = dataSource.getUsers().map { userResponse -> userResponse.toUser()}
-            latestUsersMutex.withLock {
-                this.latestUsers = networkResult
-            }
-        }
-
-        return latestUsersMutex.withLock { this.latestUsers }
-    }
-
     override suspend fun getUsers(): List<User> {
         return dataSource.getUsers()
             .map { userResponse -> userResponse.toUser() }
